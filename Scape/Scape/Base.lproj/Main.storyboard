@@ -64,9 +64,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="n5h-wv-MNI">
+                            <rect key="frame" x="0.0" y="0.0" width="440" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="YZl-uh-Kjp" id="F4y-Np-jGY"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="buildingCell" textLabel="HAW-Gy-VP2" detailTextLabel="pau-EE-cDS" style="IBUITableViewCellStyleSubtitle" id="cb9-SZ-f6s">
-                                <rect key="frame" x="0.0" y="50" width="440" height="76"/>
+                                <rect key="frame" x="0.0" y="94" width="440" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cb9-SZ-f6s" id="iva-bP-Ecz">
                                     <rect key="frame" x="0.0" y="0.0" width="377.66666666666669" height="76"/>
@@ -97,6 +105,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="EDx-uq-11Q"/>
                     <connections>
+                        <outlet property="searchBar" destination="n5h-wv-MNI" id="0BY-HN-vY0"/>
                         <segue destination="1S7-Kx-qTX" kind="show" identifier="showDetail" id="PYi-7b-eyS"/>
                     </connections>
                 </tableViewController>
