@@ -13,6 +13,30 @@ class AddReviewViewController: UIViewController {
     
     @IBOutlet weak var buildingPicker: UIPickerView!
     
+    @IBOutlet weak var floorTextField: UITextField!
+    
+    @IBOutlet weak var descriptionTextField: UITextField!
+    
+    // MARK: Ranking labels for study spot
+    
+    @IBOutlet weak var noiseLevelLabel: UILabel!
+    
+    @IBOutlet weak var busyLevelLabel: UILabel!
+    
+    @IBOutlet weak var comfortLevelLabel: UILabel!
+    
+    @IBOutlet weak var aestheticsLevelLabel: UILabel!
+    
+    // MARK: Sliders for study spot rankings
+    
+    @IBOutlet weak var noiseSlider: UISlider!
+    
+    @IBOutlet weak var busySlider: UISlider!
+    
+    @IBOutlet weak var comfortSlider: UISlider!
+    
+    @IBOutlet weak var aestheticsSlider: UISlider!
+    
     let data: [String] = [
         "DePaul Center",
         "CDM Center",
@@ -37,6 +61,8 @@ class AddReviewViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
             tap.cancelsTouchesInView = false
             view.addGestureRecognizer(tap)
+        
+        floorTextField.keyboardType = .numberPad
     }
     
     @objc func dismissKeyboard() {
@@ -53,6 +79,25 @@ class AddReviewViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+    
+    @IBAction func noiseSliderMoved(_ sender: UISlider) {
+        noiseLevelLabel.text = "\(Int(sender.value))"
+    }
+    
+    
+    @IBAction func busySliderMoved(_ sender: UISlider) {
+        busyLevelLabel.text = "\(Int(sender.value))"
+    }
+    
+    @IBAction func comfortSliderMoved(_ sender: UISlider) {
+        comfortLevelLabel.text = "\(Int(sender.value))"
+    }
+    
+    @IBAction func aestheticsSliderMoved(_ sender: UISlider) {
+        aestheticsLevelLabel.text = "\(Int(sender.value))"
+    }
+    
     
 }
     
