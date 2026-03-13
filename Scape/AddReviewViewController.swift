@@ -9,6 +9,7 @@ import UIKit
 
 class AddReviewViewController: UIViewController {
     
+    var selectedBuilding: String = "DePaul Center"
     
     @IBOutlet weak var buildingPicker: UIPickerView!
     
@@ -33,6 +34,13 @@ class AddReviewViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.buildingPicker.delegate = self
         self.buildingPicker.dataSource = self
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     
@@ -59,6 +67,10 @@ extension AddReviewViewController: UIPickerViewDataSource, UIPickerViewDelegate 
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return data[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, InComponent component: Int) {
+        selectedBuilding = data[row]
     }
 }
     
