@@ -18,28 +18,39 @@ class ResultsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return Reviews.reviews.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let reviewList = Reviews.reviews
+        let review = reviewList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath)
+        
         // Configure the cell...
-
+        
+        cell.textLabel?.text = String(review.building) + ": " + review.description
+        cell.detailTextLabel?.text = "Score: " + String(review.scapeScore)
+        cell.imageView?.image = review.image
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -44,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reviewItem" textLabel="d5w-Yc-aMS" detailTextLabel="qr7-SG-ks2" style="IBUITableViewCellStyleValue1" id="gCD-bL-aex">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reviewCell" textLabel="d5w-Yc-aMS" detailTextLabel="qr7-SG-ks2" style="IBUITableViewCellStyleValue1" id="gCD-bL-aex">
                                 <rect key="frame" x="0.0" y="50" width="440" height="51"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gCD-bL-aex" id="uIR-SQ-p84">
@@ -52,16 +52,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d5w-Yc-aMS">
-                                            <rect key="frame" x="20" y="19" width="25" height="14.333333333333334"/>
+                                            <rect key="frame" x="20" y="15.999999999999998" width="33" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qr7-SG-ks2">
-                                            <rect key="frame" x="376.33333333333331" y="19" width="43.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="364.33333333333331" y="17" width="55.666666666666664" height="19.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -78,7 +78,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfr-D4-8Wx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1530" y="630"/>
+            <point key="canvasLocation" x="-1335" y="852"/>
         </scene>
         <!--Add-->
         <scene sceneID="YYh-J8-RIS">
@@ -313,22 +313,22 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="buildingCell" textLabel="HAW-Gy-VP2" detailTextLabel="pau-EE-cDS" style="IBUITableViewCellStyleSubtitle" id="cb9-SZ-f6s">
-                                <rect key="frame" x="0.0" y="94" width="440" height="76"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="buildingCell" textLabel="HAW-Gy-VP2" detailTextLabel="pau-EE-cDS" rowHeight="141" style="IBUITableViewCellStyleSubtitle" id="cb9-SZ-f6s">
+                                <rect key="frame" x="0.0" y="94" width="440" height="141"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cb9-SZ-f6s" id="iva-bP-Ecz">
-                                    <rect key="frame" x="0.0" y="0.0" width="377.66666666666669" height="76"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="377.66666666666669" height="141"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HAW-Gy-VP2">
-                                            <rect key="frame" x="20.000000000000004" y="15.000000000000002" width="44.333333333333336" height="28.666666666666668"/>
+                                            <rect key="frame" x="20.000000000000004" y="43.666666666666664" width="44.333333333333336" height="28.666666666666668"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pau-EE-cDS">
-                                            <rect key="frame" x="19.999999999999996" y="43.666666666666671" width="52.666666666666664" height="18"/>
+                                            <rect key="frame" x="19.999999999999996" y="76.666666666666671" width="52.666666666666664" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
@@ -351,7 +351,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4c-ko-4xa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-470" y="-1363"/>
+            <point key="canvasLocation" x="-470.4545454545455" y="-1363.1799163179917"/>
         </scene>
         <!--Item-->
         <scene sceneID="TLC-GV-Gxw">
