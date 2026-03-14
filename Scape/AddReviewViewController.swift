@@ -9,6 +9,12 @@ import UIKit
 
 class AddReviewViewController: UIViewController {
     
+    var floor: String = "1"
+    var desc: String = ""
+    var noise: Double = 0
+    var busy: Double = 0
+    var comfort: Double = 0
+    var aesthetics: Double = 0
     var selectedBuilding: String = "DePaul Center"
     
     @IBOutlet weak var buildingPicker: UIPickerView!
@@ -96,6 +102,46 @@ class AddReviewViewController: UIViewController {
     
     @IBAction func aestheticsSliderMoved(_ sender: UISlider) {
         aestheticsLevelLabel.text = "\(Int(sender.value))"
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
+        if floorTextField.text!.count == 0 || descriptionTextField.text!.count == 0 {
+            let alertMessage = "Floor and Description fields must be filled to submit."
+            
+            let alertController = UIAlertController(title: "Missing input", message: alertMessage, preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            
+            alertController.addAction(cancelAction)
+            
+            present(alertController, animated: true, completion: nil)
+            return
+        } else {
+            floor = floorTextField.text!
+            desc = descriptionTextField.text!
+            noise = Double(noiseLevelLabel.text!) ?? 0
+            busy = Double(busyLevelLabel.text!) ?? 0
+            comfort = Double(comfortLevelLabel.text!) ?? 0
+            aesthetics = Double(aestheticsLevelLabel.text!) ?? 0
+            var result = selectedBuilding + " " + floor + " " + desc + " " + String(noise) + " " + String(busy) + " " + String(comfort) + " " + String(aesthetics)
+            print(result)
+            
+        }
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        noiseSlider.value = 1
+        busySlider.value = 1
+        comfortSlider.value = 1
+        aestheticsSlider.value = 1
+        
+        noiseLevelLabel.text = "0"
+        busyLevelLabel.text = "0"
+        comfortLevelLabel.text = "0"
+        aestheticsLevelLabel.text = "0"
+        
+        floorTextField.text = ""
+        descriptionTextField.text = ""
     }
     
     
