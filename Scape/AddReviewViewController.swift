@@ -7,7 +7,10 @@
 
 import UIKit
 
-class AddReviewViewController: UIViewController {
+class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    @IBOutlet weak var uploadedImage: UIImageView!
     
     var floor: String = "1"
     var desc: String = ""
@@ -87,6 +90,54 @@ class AddReviewViewController: UIViewController {
      */
     
     
+    @IBAction func uploadImageTapped(_ sender: UIButton) {
+        let alert = UIAlertController(
+            title: "Add photo",
+            message: "Choose a source",
+            preferredStyle: .actionSheet
+        )
+        
+        alert.addAction(UIAlertAction(title: "Take Photo", style: .default) { _ in
+            self.openCamera()
+        })
+        
+        alert.addAction(UIAlertAction(title: "Choose from Library", style: .default) { _ in
+             self.openPhotoLibrary()
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        present(alert, animated: true)
+    }
+    
+    func openCamera() {
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            print("Camera not available")
+            return
+        }
+        
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.delegate = self
+        present(picker, animated: true)
+    }
+    
+    func openPhotoLibrary() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        
+        present(picker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            uploadedImage.image = image
+        }
+        
+        dismiss(animated: true)
+    }
+    
     @IBAction func noiseSliderMoved(_ sender: UISlider) {
         noiseLevelLabel.text = "\(Int(sender.value))"
     }
@@ -123,7 +174,9 @@ class AddReviewViewController: UIViewController {
             busy = Double(busyLevelLabel.text!) ?? 0
             comfort = Double(comfortLevelLabel.text!) ?? 0
             aesthetics = Double(aestheticsLevelLabel.text!) ?? 0
-            var result = selectedBuilding + " " + floor + " " + desc + " " + String(noise) + " " + String(busy) + " " + String(comfort) + " " + String(aesthetics)
+            
+            
+            let result = selectedBuilding + " " + floor + " " + desc + " " + String(noise) + " " + String(busy) + " " + String(comfort) + " " + String(aesthetics)
             print(result)
             
         }
@@ -160,7 +213,7 @@ extension AddReviewViewController: UIPickerViewDataSource, UIPickerViewDelegate 
         return data[row]
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, InComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedBuilding = data[row]
     }
 }

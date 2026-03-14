@@ -145,8 +145,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YZPTH68UGR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Scape/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to take photos to add to our app!";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to access your photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -176,8 +179,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YZPTH68UGR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Scape/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to take photos to add to our app!";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to access your photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

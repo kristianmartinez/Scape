@@ -184,6 +184,22 @@
                                     <action selector="cancelButtonTapped:" destination="x9n-Da-KpC" eventType="touchUpInside" id="qEo-4j-Ff7"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LUj-fz-esr">
+                                <rect key="frame" x="70" y="354" width="301" height="172"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="uploaded_image"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrS-A6-f0h">
+                                <rect key="frame" x="156" y="542" width="130" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Upload Image">
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="uploadImageTapped:" destination="x9n-Da-KpC" eventType="touchUpInside" id="2Wd-Dj-EPJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mdr-Vo-Wb8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -201,6 +217,7 @@
                         <outlet property="floorTextField" destination="EOD-T8-pU0" id="ZFk-Ot-jrZ"/>
                         <outlet property="noiseLevelLabel" destination="69Y-4N-SWQ" id="bLv-Ta-jHl"/>
                         <outlet property="noiseSlider" destination="Mym-t7-OCC" id="z7Q-EN-ztC"/>
+                        <outlet property="uploadedImage" destination="LUj-fz-esr" id="zW2-Gy-CmX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CpM-ge-jmy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -385,6 +402,9 @@
         <image name="plus.capsule.fill" catalog="system" width="128" height="96"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
