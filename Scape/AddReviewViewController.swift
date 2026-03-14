@@ -8,8 +8,7 @@
 import UIKit
 
 class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    
+        
     @IBOutlet weak var uploadedImage: UIImageView!
     
     var floor: String = "1"
@@ -21,29 +20,20 @@ class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate
     var selectedBuilding: String = "DePaul Center"
     
     @IBOutlet weak var buildingPicker: UIPickerView!
-    
     @IBOutlet weak var floorTextField: UITextField!
-    
     @IBOutlet weak var descriptionTextField: UITextField!
     
+    
     // MARK: Ranking labels for study spot
-    
     @IBOutlet weak var noiseLevelLabel: UILabel!
-    
     @IBOutlet weak var busyLevelLabel: UILabel!
-    
     @IBOutlet weak var comfortLevelLabel: UILabel!
-    
     @IBOutlet weak var aestheticsLevelLabel: UILabel!
     
     // MARK: Sliders for study spot rankings
-    
     @IBOutlet weak var noiseSlider: UISlider!
-    
     @IBOutlet weak var busySlider: UISlider!
-    
     @IBOutlet weak var comfortSlider: UISlider!
-    
     @IBOutlet weak var aestheticsSlider: UISlider!
     
     let data: [String] = [
@@ -142,7 +132,6 @@ class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate
         noiseLevelLabel.text = "\(Int(sender.value))"
     }
     
-    
     @IBAction func busySliderMoved(_ sender: UISlider) {
         busyLevelLabel.text = "\(Int(sender.value))"
     }
@@ -175,14 +164,52 @@ class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate
             comfort = Double(comfortLevelLabel.text!) ?? 0
             aesthetics = Double(aestheticsLevelLabel.text!) ?? 0
             
+            // MARK: calculate score
+//            let calculatedScore = calculateScapeScore()
+//            score = calculatedScore
             
-            let result = selectedBuilding + " " + floor + " " + desc + " " + String(noise) + " " + String(busy) + " " + String(comfort) + " " + String(aesthetics)
+            // MARK: Saves all data to Review class, makes up data for one tab bar!
+            let review = Reviews(
+                building: selectedBuilding,
+                floor: floor,
+                description: desc,
+                noise: noise,
+                busy: busy,
+                comfort: comfort,
+                aesthetics: aesthetics,
+                image: uploadedImage.image ?? UIImage(),
+                scapeScore: calculateScapeScore()
+            )
+            
+            // MARK: add review to list of reviers
+            Reviews.reviews.append(review)
+            
+            
+            let result = selectedBuilding + " floor: " + floor + " desc: " + desc + " noise: " + String(noise) + " busy: " + String(busy) + " comfort: " + String(comfort) + " aesthetics: " + String(aesthetics)
             print(result)
+            
+            resetData()
             
         }
     }
     
+    func calculateScapeScore() -> Double {
+        var sum: Double = 0
+        var score: Double = 0
+        
+        sum += (10 - noise) + (10 - busy) + comfort + aesthetics
+        
+        score = sum / 4
+        
+        return score
+        
+    }
+    
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        resetData()
+    }
+    
+    func resetData() {
         noiseSlider.value = 1
         busySlider.value = 1
         comfortSlider.value = 1
@@ -195,6 +222,8 @@ class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate
         
         floorTextField.text = ""
         descriptionTextField.text = ""
+        
+        uploadedImage.image = nil
     }
     
     
