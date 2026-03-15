@@ -167,7 +167,6 @@ class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate
             // MARK: Saves all data to Review class, makes up data for one tab bar!
             let review = Reviews(
                 building: selectedBuilding,
-                address: addresses[selectedBuilding] ?? "1 E Jackson Blvd, Chicago, IL 60604",
                 floor: floor,
                 description: desc,
                 noise: noise,
@@ -184,12 +183,13 @@ class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate
             
             
             
-            let result = selectedBuilding + " floor: " + floor + " address: " + addresses[selectedBuilding]!
-            +  " desc: " + desc + " noise: " + String(noise) + " busy: " + String(busy) + " comfort: " + String(comfort) + " aesthetics: " + String(aesthetics)
+            let result = selectedBuilding + " floor: " + floor +  " desc: " + desc
+            + " noise: " + String(noise) + " busy: " + String(busy) + " comfort: "
+            + String(comfort) + " aesthetics: " + String(aesthetics)
+            
             print(result)
             
             resetData()
-            
         }
     }
     

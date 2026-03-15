@@ -11,10 +11,11 @@ import Foundation
 class Reviews {
 
     static var reviews: [Reviews] = []
+    
+    // MARK: holds building names that have been submitted from AddReviewViewController
     static var visitedSpots = Set<String>()
     
     var building: String
-    var address: String
     var floor: String
     var description: String
     var noise: Double
@@ -24,9 +25,8 @@ class Reviews {
     var image: UIImage?
     var scapeScore: Double
     
-    init(building: String, address: String, floor: String, description: String, noise: Double, busy: Double, comfort: Double, aesthetics: Double, image: UIImage, scapeScore: Double) {
+    init(building: String, floor: String, description: String, noise: Double, busy: Double, comfort: Double, aesthetics: Double, image: UIImage, scapeScore: Double) {
         self.building = building
-        self.address = address
         self.floor = floor
         self.description = description
         self.noise = noise

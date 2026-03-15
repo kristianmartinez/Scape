@@ -96,7 +96,7 @@ let buildingCoordinates: [String: CLLocationCoordinate2D] = [
     "Schmitt Academic Center": CLLocationCoordinate2D(latitude: 41.92426238783908, longitude: -87.65506190215969),
     "John T. Richardson Library": CLLocationCoordinate2D(latitude: 41.925083768059366, longitude: -87.65539461934766),
     "Student Center": CLLocationCoordinate2D(latitude: 41.92334348657729, longitude: -87.6541127751714),
-    "Ray": CLLocationCoordinate2D(latitude: 41.92284567449978, longitude: -87.65317369051246),
+    "Ray Meyer Fitness and Recreation Center": CLLocationCoordinate2D(latitude: 41.92284567449978, longitude: -87.65317369051246),
     "Levan Center": CLLocationCoordinate2D(latitude: 41.92433811793486, longitude: -87.65506744818288),
     "School of Music": CLLocationCoordinate2D(latitude: 41.924751391376844, longitude: -87.64902298866545),
     "Arts & Letters Hall": CLLocationCoordinate2D(latitude: 41.92426074009677, longitude: -87.65449431750076),

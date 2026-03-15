@@ -12,11 +12,12 @@ import CoreLocation
 class MapViewController: UIViewController {
     
     let reviews = Reviews.reviews
+    let mapView = MKMapView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let mapView = MKMapView(frame: view.bounds)
+        mapView.frame = view.bounds
         view.addSubview(mapView)
         
         // MARK: Pinned location of the DePaul Center (hardcoded)
@@ -26,8 +27,16 @@ class MapViewController: UIViewController {
 //        mapView.addAnnotation(depaulCenter)
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        view.reloadInputViews()
+        
+        let visitedBuildings = Reviews.visitedSpots
+        for building in visitedBuildings {
+            let mark = MKPointAnnotation()
+            mark.coordinate = buildingCoordinates[building] ?? CLLocationCoordinate2D(latitude: 41.87790, longitude: -87.62719)
+            mark.title = building
+            mapView.addAnnotation(mark)
+        }
     }
 }
