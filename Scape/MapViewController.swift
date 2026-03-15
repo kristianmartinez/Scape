@@ -19,6 +19,14 @@ class MapViewController: UIViewController {
         
         mapView.frame = view.bounds
         view.addSubview(mapView)
+        
+        let coordinate = CLLocationCoordinate2D(latitude: 41.8781, longitude: -87.6298)
+        
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        
+        let region = MKCoordinateRegion(center: coordinate, span: span)
+        
+        mapView.setRegion(region, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
