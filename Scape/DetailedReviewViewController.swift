@@ -13,6 +13,8 @@ class DetailedReviewViewController: UIViewController {
     
     @IBOutlet weak var spotDescLabel: UILabel!
     
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     @IBOutlet weak var image: UIImageView!
     
     var review: Reviews?
@@ -28,6 +30,7 @@ class DetailedReviewViewController: UIViewController {
         if let r = review {
             buildingNameLabel.text = r.building
             spotDescLabel.text = r.description
+            scoreLabel.text = "Score: " + String(r.scapeScore)
             image.image = r.image
         }
     }

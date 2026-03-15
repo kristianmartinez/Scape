@@ -74,13 +74,13 @@ let buildings = [
     Building(name: "Arts & Letters Hall",
          address: "2315 N Kenmore Ave, Chicago, IL 60614",
          campus: "Lincoln Park Campus",
-         description: "Home to many humanities departments including history, philosophy, and language studies. Contains classrooms, faculty offices, and student study spaces.",
+         description: "Home to many humanities departments including history, philosophy, and language studies.",
          imageName: "artsandletters"),
     
     Building(name: "The Theatre School",
          address: "2350 N Racine Ave, Chicago, IL 60614",
          campus: "Lincoln Park Campus",
-         description: "Home of DePaul’s nationally recognized Theatre School. The building contains performance spaces, rehearsal rooms, classrooms, and production studios for students studying acting, directing, design, and theatre technology.",
+         description: "Home of DePaul’s nationally recognized Theatre School. The building contains performance spaces, rehearsal rooms, classrooms, and production studios for students.",
          imageName: "theatre"),
     ]
 

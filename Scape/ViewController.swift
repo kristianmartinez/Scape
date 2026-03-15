@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // MARK: This ViewController was used for debugging and logging purposes :) 
 
     override func viewDidLoad() {
         super.viewDidLoad()
