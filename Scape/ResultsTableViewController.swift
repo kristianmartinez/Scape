@@ -36,6 +36,12 @@ class ResultsTableViewController: UITableViewController {
         return Reviews.reviews.count
     }
 
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "showDetailedReviews", sender: indexPath)
+        self.tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let reviewList = Reviews.reviews
@@ -44,7 +50,7 @@ class ResultsTableViewController: UITableViewController {
         
         // Configure the cell...
         
-        cell.textLabel?.text = String(review.building) + ": " + review.description
+        cell.textLabel?.text = review.building
         cell.detailTextLabel?.text = "Score: " + String(review.scapeScore)
         cell.imageView?.image = review.image
         
@@ -87,14 +93,18 @@ class ResultsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        guard let detailVC = segue.destination as? DetailedReviewViewController else { return }
+        guard let indexPath = sender as? IndexPath else { return }
+        detailVC.review = Reviews.reviews[indexPath.row]
     }
-    */
+    
 
 }

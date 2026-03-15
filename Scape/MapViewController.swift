@@ -19,14 +19,7 @@ class MapViewController: UIViewController {
         
         mapView.frame = view.bounds
         view.addSubview(mapView)
-        
-        // MARK: Pinned location of the DePaul Center (hardcoded)
-//        let depaulCenter = MKPointAnnotation()
-//        depaulCenter.coordinate = CLLocationCoordinate2D(latitude: 41.87790, longitude: -87.62719)
-//        depaulCenter.title = "DePaul Center"
-//        mapView.addAnnotation(depaulCenter)
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

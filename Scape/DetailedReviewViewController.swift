@@ -1,21 +1,22 @@
 //
-//  DetailViewController.swift
+//  DetailedReviewViewController.swift
 //  Scape
 //
-//  Created by Kristian Martinez on 3/9/26.
+//  Created by Kristian Martinez on 3/14/26.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController {
-    
+class DetailedReviewViewController: UIViewController {
+
     @IBOutlet weak var buildingNameLabel: UILabel!
     
-    @IBOutlet weak var buildingDescLabel: UILabel!
+    @IBOutlet weak var spotDescLabel: UILabel!
     
     @IBOutlet weak var image: UIImageView!
     
-    var building: Building?
+    var review: Reviews?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +25,10 @@ class DetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let b = building {
-            buildingNameLabel.text = b.name
-            buildingDescLabel.text = b.description + "\n" + "\n" + "Address: " + b.address
-            image.image = UIImage(named: b.imageName)
+        if let r = review {
+            buildingNameLabel.text = r.building
+            spotDescLabel.text = r.description
+            image.image = r.image
         }
     }
     
