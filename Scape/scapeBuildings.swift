@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 
 let buildings = [
     // MARK: Loop Campus
@@ -83,8 +84,24 @@ let buildings = [
          imageName: "theatre"),
     ]
 
-// MARK: dictionary to map building names -> address (for MapViewController)
-let addresses = Dictionary(uniqueKeysWithValues: buildings.map { ($0.name, $0.address) })
+// MARK: dictionary to map building names -> coordinates (for MapViewController)
+let buildingCoordinates: [String: CLLocationCoordinate2D] = [
+    // Loop Campus
+    "DePaul Center": CLLocationCoordinate2D(latitude: 41.878156707929286, longitude: -87.62743380400904),
+    "CDM Center": CLLocationCoordinate2D(latitude: 41.87859606031419, longitude: -87.62552233099747),
+    "Lewis Center": CLLocationCoordinate2D(latitude: 41.87813282640621, longitude: -87.6263844770207),
+    "Daley Building": CLLocationCoordinate2D(latitude: 41.87880028435656, longitude: -87.62728048866795),
+
+    // Lincoln Park Campus
+    "Schmitt Academic Center": CLLocationCoordinate2D(latitude: 41.92426238783908, longitude: -87.65506190215969),
+    "John T. Richardson Library": CLLocationCoordinate2D(latitude: 41.925083768059366, longitude: -87.65539461934766),
+    "Student Center": CLLocationCoordinate2D(latitude: 41.92334348657729, longitude: -87.6541127751714),
+    "Ray": CLLocationCoordinate2D(latitude: 41.92284567449978, longitude: -87.65317369051246),
+    "Levan Center": CLLocationCoordinate2D(latitude: 41.92433811793486, longitude: -87.65506744818288),
+    "School of Music": CLLocationCoordinate2D(latitude: 41.924751391376844, longitude: -87.64902298866545),
+    "Arts & Letters Hall": CLLocationCoordinate2D(latitude: 41.92426074009677, longitude: -87.65449431750076),
+    "The Theatre School": CLLocationCoordinate2D(latitude: 41.925081079157984, longitude: -87.65878906167708)
+]
 
 class Building {
     

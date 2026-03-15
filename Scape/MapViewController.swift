@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
     
@@ -29,6 +30,4 @@ class MapViewController: UIViewController {
         super.viewWillAppear(animated)
         view.reloadInputViews()
     }
-    
-    
 }
