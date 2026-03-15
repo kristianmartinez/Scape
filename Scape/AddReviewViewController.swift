@@ -164,13 +164,10 @@ class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate
             comfort = Double(comfortLevelLabel.text!) ?? 0
             aesthetics = Double(aestheticsLevelLabel.text!) ?? 0
             
-            // MARK: calculate score
-//            let calculatedScore = calculateScapeScore()
-//            score = calculatedScore
-            
             // MARK: Saves all data to Review class, makes up data for one tab bar!
             let review = Reviews(
                 building: selectedBuilding,
+                address: addresses[selectedBuilding] ?? "1 E Jackson Blvd, Chicago, IL 60604",
                 floor: floor,
                 description: desc,
                 noise: noise,
@@ -183,9 +180,12 @@ class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate
             
             // MARK: add review to list of reviers
             Reviews.reviews.append(review)
+            Reviews.visitedSpots.insert(selectedBuilding)
             
             
-            let result = selectedBuilding + " floor: " + floor + " desc: " + desc + " noise: " + String(noise) + " busy: " + String(busy) + " comfort: " + String(comfort) + " aesthetics: " + String(aesthetics)
+            
+            let result = selectedBuilding + " floor: " + floor + " address: " + addresses[selectedBuilding]!
+            +  " desc: " + desc + " noise: " + String(noise) + " busy: " + String(busy) + " comfort: " + String(comfort) + " aesthetics: " + String(aesthetics)
             print(result)
             
             resetData()

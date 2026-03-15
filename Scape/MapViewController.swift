@@ -10,9 +10,7 @@ import MapKit
 
 class MapViewController: UIViewController {
     
-    
     let reviews = Reviews.reviews
-    var visitedSpots = Set<String>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +23,12 @@ class MapViewController: UIViewController {
 //        depaulCenter.coordinate = CLLocationCoordinate2D(latitude: 41.87790, longitude: -87.62719)
 //        depaulCenter.title = "DePaul Center"
 //        mapView.addAnnotation(depaulCenter)
-        
-        
-        
-        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.reloadInputViews()
+    }
+    
+    
 }

@@ -81,9 +81,10 @@ let buildings = [
          campus: "Lincoln Park Campus",
          description: "Home of DePaul’s nationally recognized Theatre School. The building contains performance spaces, rehearsal rooms, classrooms, and production studios for students studying acting, directing, design, and theatre technology.",
          imageName: "theatre"),
-
-
     ]
+
+// MARK: dictionary to map building names -> address (for MapViewController)
+let addresses = Dictionary(uniqueKeysWithValues: buildings.map { ($0.name, $0.address) })
 
 class Building {
     
