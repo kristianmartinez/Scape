@@ -14,5 +14,5 @@ study spots based on noise, business, comfort, and aesthetics. 😌
 <br>
 Scape was built using the Swift UIKit and the XCode IDE. Scape used the UIImagePickerController  
 API and MapKit for UIKit.🔨
-<br>
+<br>  
 -Kristian Martinez
