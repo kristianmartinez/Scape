@@ -8,7 +8,6 @@ Contribute to ratings by adding your own review. Don’t see a review for your f
 Add a new review for a spot you’d love to share! 📝  
 
 <br>
-<br>
 Don’t gatekeep! Upload your own pictures and rank  
 study spots based on noise, business, comfort, and aesthetics. 😌  
 <br>
